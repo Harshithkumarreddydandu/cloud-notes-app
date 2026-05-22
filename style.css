@@ -1,0 +1,23 @@
+body{
+    font-family: Arial;
+    padding:20px;
+    background:#f0f0f0;
+}
+
+input, textarea{
+    width:300px;
+    padding:10px;
+}
+
+button{
+    padding:10px 20px;
+    background:blue;
+    color:white;
+    border:none;
+}
+
+.note-card{
+    background:white;
+    padding:15px;
+    margin-top:10px;
+}
