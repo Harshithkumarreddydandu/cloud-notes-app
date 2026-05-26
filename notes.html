@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div id="messageToast" class="toast"></div>
+
+    <div class="dashboard-shell">
+        <aside class="sidebar glass">
+            <h2>☁️ Notes Pro</h2>
+            <nav>
+                <a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <a href="notes.html" class="active"><i class="fa-solid fa-note-sticky"></i> Notes</a>
+                <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Filter by category, pin important ideas, and export your note collection as JSON.</p>
+            </div>
+        </aside>
+
+        <main class="notes-main">
+            <header class="dashboard-header">
+                <div>
+                    <p class="eyebrow">Workspace</p>
+                    <h1>Notes Studio</h1>
+                    <p class="subtext">A hybrid note editor with smart search, priority labels, and import/export tools.</p>
+                </div>
+                <div class="header-actions">
+                    <input type="text" id="searchInput" placeholder="Search notes..." onkeyup="displayNotes()">
+                    <a href="dashboard.html" class="secondary-btn"><i class="fa-solid fa-arrow-left"></i> Back</a>
+                </div>
+            </header>
+
+            <section class="notes-toolbar glass">
+                <div id="categoryFilters" class="category-filters"></div>
+                <div class="toolbar-actions">
+                    <button class="main-btn" onclick="exportNotes()"><i class="fa-solid fa-file-export"></i> Export</button>
+                    <label class="secondary-btn file-upload-button"><i class="fa-solid fa-file-import"></i> Import
+                        <input id="importFile" type="file" accept="application/json" onchange="importNotes(event)">
+                    </label>
+                    <button class="secondary-btn" onclick="clearAllNotes()"><i class="fa-solid fa-trash"></i> Clear All</button>
+                </div>
+            </section>
+
+            <section class="note-editor glass">
+                <div class="note-editor-head">
+                    <div>
+                        <p class="eyebrow">Create</p>
+                        <h2 id="noteFormTitle">Create a note</h2>
+                    </div>
+                    <button id="cancelEditBtn" class="secondary-btn" onclick="cancelEdit()">Cancel</button>
+                </div>
+                <input type="text" id="noteTitle" placeholder="Note Title">
+                <textarea id="noteText" placeholder="Write something amazing..."></textarea>
+                <div class="editor-row">
+                    <select id="noteCategory">
+                        <option>Personal</option>
+                        <option>Study</option>
+                        <option>Work</option>
+                        <option>Ideas</option>
+                    </select>
+                    <select id="notePriority">
+                        <option>Normal</option>
+                        <option>Important</option>
+                        <option>Urgent</option>
+                    </select>
+                </div>
+                <div class="editor-row editor-row-small">
+                    <input type="text" id="noteTags" placeholder="Tags (comma separated)">
+                    <label class="pin-toggle"><input id="pinNote" type="checkbox"> Pin note</label>
+                </div>
+                <button class="main-btn" onclick="addNote()"><i class="fa-solid fa-plus"></i> Save Note</button>
+            </section>
+
+            <section class="notes-grid" id="notesList"></section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Pro Auth</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div id="messageToast" class="toast"></div>
+    <div class="auth-page">
+        <section class="auth-hero glass">
+            <div class="hero-copy">
+                <span>✨ Hybrid Cloud Notes</span>
+                <h1>Capture your ideas with a smarter workspace.</h1>
+                <p>Notes Pro gives you a polished, cloud-inspired interface with quick access, multi-device notes, and secure account handling.</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div>
+                            <strong>Fast access</strong>
+                            <p>Login instantly and pick up where you left off.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <strong>Safe storage</strong>
+                            <p>Local persistence keeps your notes ready and private.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <div>
+                            <strong>Hybrid layout</strong>
+                            <p>Switch between dashboard, notes, and profile seamlessly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="hero-panel-top">
+                    <div>
+                        <p>Welcome back</p>
+                        <h2>Let's organize your next idea.</h2>
+                    </div>
+                    <div class="hero-badge">Notes Pro</div>
+                </div>
+                <div class="hero-snapshot">
+                    <div>
+                        <p>Total Notes</p>
+                        <strong>--</strong>
+                    </div>
+                    <div>
+                        <p>Recent</p>
+                        <strong>Today</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-panel glass">
+            <div class="auth-heading">
+                <h2>Sign in to Notes Pro</h2>
+                <p>Use an existing account or create a new one in seconds.</p>
+            </div>
+            <div class="form-grid">
+                <input type="text" id="username" placeholder="Username or Email">
+                <input type="password" id="password" placeholder="Password">
+                <button class="main-btn" onclick="login()">Login</button>
+                <a href="signup.html" class="secondary-btn">Create Account</a>
+            </div>
+            <div class="auth-footer">
+                <p><i class="fa-solid fa-circle-info"></i> Login with username or email, then manage notes in your dashboard.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

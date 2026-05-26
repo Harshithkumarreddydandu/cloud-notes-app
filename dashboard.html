@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div id="messageToast" class="toast"></div>
+    <div class="dashboard-shell">
+        <aside class="sidebar glass">
+            <h2>☁️ Notes Pro</h2>
+            <nav>
+                <a href="dashboard.html" class="active"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <a href="notes.html"><i class="fa-solid fa-note-sticky"></i> Notes</a>
+                <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>See pinned note counts, recent activity, and note categories in one place.</p>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div>
+                    <p class="eyebrow">Good day,</p>
+                    <h1 id="welcomeUser"></h1>
+                    <p class="subtext">Review your note summary and jump straight into the workspace.</p>
+                </div>
+                <button class="main-btn" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+            </header>
+
+            <section class="metric-grid">
+                <article class="metric-card glass">
+                    <span>Total Notes</span>
+                    <strong id="notesCount">0</strong>
+                    <p>Keep track of your saved thoughts.</p>
+                </article>
+                <article class="metric-card glass">
+                    <span>Pinned Notes</span>
+                    <strong id="pinnedCount">0</strong>
+                    <p>Items you marked as important.</p>
+                </article>
+                <article class="metric-card glass">
+                    <span>Categories</span>
+                    <strong id="categoryCount">0</strong>
+                    <p>Unique categories used in your notes.</p>
+                </article>
+            </section>
+
+            <section class="dashboard-panels">
+                <div class="panel glass">
+                    <h2>Workspace Overview</h2>
+                    <p>Everything is stored locally for this demo. Use the Notes section to add, edit, and search through your ideas.</p>
+                    <div class="panel-grid">
+                        <div>
+                            <h3>Hybrid Navigation</h3>
+                            <p>Switch between panels, tasks, and profile in one app.</p>
+                        </div>
+                        <div>
+                            <h3>Secure Session</h3>
+                            <p>Logged in users are redirected properly using guard logic.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel glass">
+                    <h2>Recent Notes</h2>
+                    <ul id="recentNotes" class="recent-notes"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        const user = localStorage.getItem("loggedInUser") || "Guest";
+        document.getElementById("welcomeUser").innerText = "Welcome " + user;
+        const notes = JSON.parse(localStorage.getItem(user + "_notes")) || [];
+        document.getElementById("notesCount").innerText = notes.length;
+    </script>
+</body>
+
+</html>

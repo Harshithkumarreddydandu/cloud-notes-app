@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div id="messageToast" class="toast"></div>
+    <div class="dashboard-shell">
+        <aside class="sidebar glass">
+            <h2>☁️ Notes Pro</h2>
+            <nav>
+                <a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <a href="notes.html"><i class="fa-solid fa-note-sticky"></i> Notes</a>
+                <a href="profile.html" class="active"><i class="fa-solid fa-user"></i> Profile</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Update your dashboard preferences and switch themes in one sleek profile view.</p>
+            </div>
+        </aside>
+
+        <main class="profile-main">
+            <header class="dashboard-header">
+                <div>
+                    <p class="eyebrow">Account</p>
+                    <h1>Profile Settings</h1>
+                    <p class="subtext">Manage your username, theme, and notes export settings from a unified panel.</p>
+                </div>
+                <a href="dashboard.html" class="secondary-btn"><i class="fa-solid fa-arrow-left"></i> Dashboard</a>
+            </header>
+
+            <section class="profile-grid">
+                <div class="profile-card glass">
+                    <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
+                    <h2 id="profileName"></h2>
+                    <p class="profile-subtext">Your local Notes Pro account is stored in your browser session and can be exported anytime.</p>
+                </div>
+
+                <div class="profile-actions glass">
+                    <h2>Preferences</h2>
+                    <button class="main-btn" onclick="toggleDarkMode()"><i class="fa-solid fa-moon"></i> Toggle Dark Mode</button>
+                    <button class="main-btn" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                    <button class="secondary-btn" onclick="exportNotes()"><i class="fa-solid fa-file-export"></i> Export Notes</button>
+                    <label class="secondary-btn file-upload-button"><i class="fa-solid fa-file-import"></i> Import Notes
+                        <input id="importFileProfile" type="file" accept="application/json" onchange="importNotes(event)">
+                    </label>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        const user = localStorage.getItem("loggedInUser") || "Guest";
+        document.getElementById("profileName").innerText = user;
+    </script>
+</body>
+
+</html>

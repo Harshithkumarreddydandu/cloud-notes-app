@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Notes Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div id="messageToast" class="toast"></div>
+    <div class="auth-page">
+        <section class="auth-hero glass">
+            <div class="hero-copy">
+                <span>🚀 Start your note journey</span>
+                <h1>Create your secure Notes Pro account.</h1>
+                <p>Use a strong password and a verified email to keep your notes organized and private.</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-lock"></i>
+                        <div>
+                            <strong>Secure login</strong>
+                            <p>Client-side password hashing mimics real auth behavior.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <div>
+                            <strong>Easy signup</strong>
+                            <p>Register quickly and jump into your personal notes space.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <div>
+                            <strong>Hybrid app</strong>
+                            <p>Enjoy a polished multi-screen interface with note and profile management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="hero-panel-top">
+                    <div>
+                        <p>Note smarter</p>
+                        <h2>Get a modern note management experience.</h2>
+                    </div>
+                    <div class="hero-badge">Join Notes Pro</div>
+                </div>
+                <div class="hero-snapshot">
+                    <div>
+                        <p>New Users</p>
+                        <strong>Ready</strong>
+                    </div>
+                    <div>
+                        <p>Security</p>
+                        <strong>Client-side</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-panel glass">
+            <div class="auth-heading">
+                <h2>Create your account</h2>
+                <p>One account gives you access to dashboard, notes, and profile screens.</p>
+            </div>
+            <div class="form-grid">
+                <input type="text" id="username" placeholder="Username">
+                <input type="email" id="email" placeholder="Email">
+                <input type="password" id="password" placeholder="Password">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                <button class="main-btn" onclick="signup()">Create Account</button>
+                <a href="login.html" class="secondary-btn">Already have an account?</a>
+            </div>
+            <div class="auth-footer">
+                <p><i class="fa-solid fa-circle-info"></i> The authentication system stores your hashed password locally for demo purposes.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
